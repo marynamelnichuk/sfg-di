@@ -1,9 +1,7 @@
 package com.mmelnychuk.springdi.sfgdi;
 
-import com.mmelnychuk.springdi.sfgdi.controllers.ConstructorInjectedController;
-import com.mmelnychuk.springdi.sfgdi.controllers.MyController;
-import com.mmelnychuk.springdi.sfgdi.controllers.PropertyInjectedController;
-import com.mmelnychuk.springdi.sfgdi.controllers.SetterInjectedController;
+import com.mmelnychuk.springdi.sfgdi.controllers.*;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +11,10 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		System.out.println("-----------I18nController------------");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.getGreeting());
 
 		System.out.println("-----------PrimaryBean------------");
 		MyController myController = (MyController) ctx.getBean("myController");
