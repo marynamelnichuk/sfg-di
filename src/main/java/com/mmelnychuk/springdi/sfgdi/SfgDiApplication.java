@@ -1,10 +1,12 @@
 package com.mmelnychuk.springdi.sfgdi;
 
+import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeDataSource;
 import com.mmelnychuk.springdi.sfgdi.controllers.*;
 import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.util.RouteMatcher;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -34,6 +36,12 @@ public class SfgDiApplication {
 		ConstructorInjectedController constructorInjectedController
 				= (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("-----------------Properties of FakeDataSource-------------------");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println("username: " + fakeDataSource.getUserName());
+		System.out.println("password: " + fakeDataSource.getPassword());
+		System.out.println("databaseUrl: " + fakeDataSource.getDatabaseUrl());
 	}
 
 }
