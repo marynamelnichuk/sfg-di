@@ -1,3 +1,8 @@
+#Configuring env properties in IntelliJ IDEA
+Go to Edit Configurations...
+Find 'Environment variables' and add new value using upercase
+Example: USERNAME=OVERYDEDMARYNA
+
 # Dependency Injection Examples
 
 This repository is for an example application built in my [Spring Framework 5 - Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO) online course
@@ -36,3 +41,4 @@ to source code changes. If you encounter a problem you can compare your code to 
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
