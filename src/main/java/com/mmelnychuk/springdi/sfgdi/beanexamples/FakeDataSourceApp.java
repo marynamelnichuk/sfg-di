@@ -1,10 +1,10 @@
 /*
- * Created 2020, 8, 28
+ * Created 2020, 8, 29
  * by Maryna Melnychuk
  */
 
 package com.mmelnychuk.springdi.sfgdi.beanexamples;
 
-public class FakeDataSource extends FakeSource {
+public class FakeDataSourceApp extends FakeSource {
 
 }

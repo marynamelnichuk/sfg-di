@@ -6,6 +6,7 @@
 package com.mmelnychuk.springdi.sfgdi.config;
 
 import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeDataSource;
+import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeDataSourceApp;
 import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeJmsBroker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,6 +42,13 @@ public class PropertyConfig {
     @Value("${mmelnychuk.jms.dburl}")
     String jmsDatabaseUrl;
 
+    @Value("${mmelnychuk.app.proper.username}")
+    String appUserName;
+    @Value("${mmelnychuk.app.proper.password}")
+    String appPassword;
+    @Value("${mmelnychuk.app.proper.dburl}")
+    String appDatabaseUrl;
+
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
@@ -53,12 +61,21 @@ public class PropertyConfig {
     @Bean
     public FakeJmsBroker fakeJmsBroken(){
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
-        fakeJmsBroker.setUser(jmsUserName);
+        fakeJmsBroker.setUserName(jmsUserName);
         fakeJmsBroker.setPassword(jmsPassword);
-        fakeJmsBroker.setUrl(jmsDatabaseUrl);
+        fakeJmsBroker.setDatabaseUrl(jmsDatabaseUrl);
         return fakeJmsBroker;
     }
-    
+
+    @Bean
+    public FakeDataSourceApp fakeDataSourceApp(){
+        FakeDataSourceApp fakeDataSourceApp = new FakeDataSourceApp();
+        fakeDataSourceApp.setUserName(appUserName);
+        fakeDataSourceApp.setPassword(appPassword);
+        fakeDataSourceApp.setDatabaseUrl(appDatabaseUrl);
+        return fakeDataSourceApp;
+    }
+
     //HERE STATIC NECESSARILY СAUSE THAT METHOD IS OVERRIDE
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() {
