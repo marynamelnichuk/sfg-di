@@ -1,0 +1,24 @@
+#dummy comment
+
+name: Maryna
+
+names:
+  - Maryna
+  - Sasha
+  - Maria
+  - Sophia
+
+pound_sign: "comment here"value
+
+book:
+  aurhor: new Author
+  publisher: new House
+
+truth: yes
+anither_true: True
+more_true: true
+
+false: no #No, False, false, FALSE
+
+string_val: "This is it is a quote"
+
