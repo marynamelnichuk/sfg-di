@@ -1,0 +1,10 @@
+#spring:
+#  profiles:
+#    active: EN
+
+mmelnychuk:
+  app:
+    proper:
+      username: maryna_app
+      password: admin_app
+      dburl: app:jdbc:8080:db:fake
