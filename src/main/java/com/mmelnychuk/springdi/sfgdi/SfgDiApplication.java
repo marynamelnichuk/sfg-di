@@ -1,6 +1,7 @@
 package com.mmelnychuk.springdi.sfgdi;
 
 import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeDataSource;
+import com.mmelnychuk.springdi.sfgdi.beanexamples.FakeJmsBroker;
 import com.mmelnychuk.springdi.sfgdi.controllers.*;
 import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.boot.SpringApplication;
@@ -42,6 +43,12 @@ public class SfgDiApplication {
 		System.out.println("username: " + fakeDataSource.getUserName());
 		System.out.println("password: " + fakeDataSource.getPassword());
 		System.out.println("databaseUrl: " + fakeDataSource.getDatabaseUrl());
+
+		System.out.println("-----------------Properties of FakeJmsBroker-------------------");
+		FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
+		System.out.println("Jms username: " + fakeJmsBroker.getUser());
+		System.out.println("Jms password: " + fakeJmsBroker.getPassword());
+		System.out.println("Jms databaseUrl: " + fakeJmsBroker.getUrl());
 	}
 
 }
